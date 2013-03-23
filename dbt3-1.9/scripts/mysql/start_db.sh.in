@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#
+# This file is released under the terms of the Artistic License.
+# Please see the file LICENSE, included in this package, for details.
+#
+# Copyright (C) 2005 Mark Wong & Open Source Development Lab, Inc.
+#
+#
+# This file is modified for adding MySQL support.
+#
+# (c)Copyright 2006 Hewlett-Packard Development Company, L.P.
+# Copyright(c) Information-technology Promotion Agency, Japan. All rights reserved 2006.
+# Result of Open Source Software Development Activities
+# of Information-technology Promotion Agency, Japan.
+#
+
+DIR=`dirname $0`
+. ${DIR}/mysql_profile || exit 1
+
+if [ -f ${MYSQL_DATA}/`hostname`.pid ]; then
+	echo "Database is already started."
+	exit 0
+fi
+
+LOGFILE="log"
+USE_PG_AUTOVACUUM=0
+OUTDIR="."
+while getopts "ao:p:" OPT; do
+	case ${OPT} in
+	a)
+		USE_PG_AUTOVACUUM=1
+		;;
+	o)
+		OUTDIR=${OPTARG}
+		;;
+	p)
+		PARAMETERS=${OPTARG}
+		;;
+	esac
+done
+
+@MYSQLD_SAFE@ --defaults-file=${MYSQL_CONFIG} ${PARAMETERS} > /dev/null 2>&1 &
+[ $? -eq 1 ] && exit 1
+
+sleep 10
+
+exit 0

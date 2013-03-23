@@ -1,0 +1,25 @@
+#!/bin/sh
+
+#
+# This file is released under the terms of the Artistic License.
+# Please see # the file LICENSE, included in this package, for details.
+#
+# Copyright (C) 2002 Jenny Zhang & Open Source Development Lab, Inc.
+#
+
+DIR=`dirname $0`
+
+DATABASE=mysql
+
+export DSS_QUERY="/sraid/dbt3-1.9/queries/mysql"
+export DSS_PATH="/sraid/mysql/data"
+export DSS_CONFIG="/sraid/dbt3-1.9/src/dbgen"
+export DBT3_PERL_MODULE="/sraid/dbt3-1.9/perlmodules"
+
+export DBGEN="${DSS_CONFIG}/dbgen"
+export GTIME="/sraid/dbt3-1.9/src/gtime"
+export QGEN="${DSS_CONFIG}/qgen"
+export PARSE_QUERY="/sraid/dbt3-1.9/src/parse_query"
+export POWER="/sraid/dbt3-1.9/src/power"
+
+source /sraid/dbt3-1.9/scripts/${DATABASE}/${DATABASE}_profile

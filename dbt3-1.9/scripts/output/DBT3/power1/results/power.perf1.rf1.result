@@ -1,0 +1,35 @@
+2013年  2月  6日 水曜日 00:39:08 JST: Stream 3 : Starting Refresh Stream 1...
+--------------
+create table tmp_lineitem3 (l_orderkey numeric(10), l_partkey numeric(10), l_suppkey numeric(10), l_linenumber numeric(10), l_quantity numeric(12,2), l_extendedprice numeric(12,2), l_discount numeric(12,2), l_tax numeric(12,2), l_returnflag char(1), l_linestatus char(1), l_shipdate date, l_commitdate date, l_receiptdate date, l_shipinstruct char(25), l_shipmode char(10), l_comment varchar(44))
+--------------
+
+--------------
+LOAD DATA INFILE '/tmp/lineitem.tbl.u3' INTO TABLE tmp_lineitem3 FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+--------------
+
+--------------
+insert into lineitem (select * from tmp_lineitem3)
+--------------
+
+--------------
+create table tmp_orders3 (o_orderkey numeric(10), o_custkey numeric(10), o_orderstatus char(1), o_totalprice numeric(12,2), o_orderdate date, o_orderpriority char(15), o_clerk char(15), o_shippriority numeric(10), o_comment varchar(79))
+--------------
+
+--------------
+LOAD DATA INFILE '/tmp/orders.tbl.u3' INTO TABLE tmp_orders3 FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+--------------
+
+--------------
+insert into orders (select * from tmp_orders3)
+--------------
+
+--------------
+drop table tmp_lineitem3
+--------------
+
+--------------
+drop table tmp_orders3
+--------------
+
+2013年  2月  6日 水曜日 00:39:12 JST: Stream 3 : Refresh Stream 1 completed.
+Stream 3 : Elapsed time for Refresh Stream 1 : 4 seconds

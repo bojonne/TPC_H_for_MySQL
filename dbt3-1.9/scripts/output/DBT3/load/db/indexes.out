@@ -1,0 +1,14 @@
+--------------
+SELECT * FROM information_schema.statistics WHERE table_schema = 'dbt3'
+--------------
+
++---------------+--------------+------------+------------+--------------+------------+--------------+-------------+-----------+-------------+----------+--------+----------+------------+---------+---------------+
+| TABLE_CATALOG | TABLE_SCHEMA | TABLE_NAME | NON_UNIQUE | INDEX_SCHEMA | INDEX_NAME | SEQ_IN_INDEX | COLUMN_NAME | COLLATION | CARDINALITY | SUB_PART | PACKED | NULLABLE | INDEX_TYPE | COMMENT | INDEX_COMMENT |
++---------------+--------------+------------+------------+--------------+------------+--------------+-------------+-----------+-------------+----------+--------+----------+------------+---------+---------------+
+| def           | dbt3         | orders     |          0 | dbt3         | PRIMARY    |            1 | o_orderkey  | A         |           0 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | part       |          0 | dbt3         | PRIMARY    |            1 | p_partkey   | A         |           0 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | partsupp   |          0 | dbt3         | PRIMARY    |            1 | ps_partkey  | A         |           0 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | partsupp   |          0 | dbt3         | PRIMARY    |            2 | ps_suppkey  | A         |           0 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | region     |          0 | dbt3         | PRIMARY    |            1 | r_regionkey | A         |           0 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | supplier   |          0 | dbt3         | PRIMARY    |            1 | s_suppkey   | A         |           0 |     NULL | NULL   |          | BTREE      |         |               |
++---------------+--------------+------------+------------+--------------+------------+--------------+-------------+-----------+-------------+----------+--------+----------+------------+---------+---------------+

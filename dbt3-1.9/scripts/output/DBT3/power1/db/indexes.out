@@ -1,0 +1,35 @@
+--------------
+SELECT * FROM information_schema.statistics WHERE table_schema = 'dbt3'
+--------------
+
++---------------+--------------+------------+------------+--------------+-----------------------+--------------+---------------+-----------+-------------+----------+--------+----------+------------+---------+---------------+
+| TABLE_CATALOG | TABLE_SCHEMA | TABLE_NAME | NON_UNIQUE | INDEX_SCHEMA | INDEX_NAME            | SEQ_IN_INDEX | COLUMN_NAME   | COLLATION | CARDINALITY | SUB_PART | PACKED | NULLABLE | INDEX_TYPE | COMMENT | INDEX_COMMENT |
++---------------+--------------+------------+------------+--------------+-----------------------+--------------+---------------+-----------+-------------+----------+--------+----------+------------+---------+---------------+
+| def           | dbt3         | customer   |          0 | dbt3         | PRIMARY               |            1 | c_custkey     | A         |      149469 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | customer   |          1 | dbt3         | i_c_nationkey         |            1 | c_nationkey   | A         |          48 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          0 | dbt3         | PRIMARY               |            1 | l_orderkey    | A         |     5958270 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          0 | dbt3         | PRIMARY               |            2 | l_linenumber  | A         |     5958270 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_shipdate          |            1 | l_shipDATE    | A         |        4990 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_partkey           |            1 | l_partkey     | A         |      425590 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_suppkey           |            1 | l_suppkey     | A         |       20760 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_receiptdate       |            1 | l_receiptDATE | A         |        5002 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_suppkey_partkey   |            1 | l_partkey     | A         |      397218 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_suppkey_partkey   |            2 | l_suppkey     | A         |     1986090 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_orderkey_quantity |            1 | l_orderkey    | A         |     5958270 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_orderkey_quantity |            2 | l_quantity    | A         |     5958270 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_orderkey          |            1 | l_orderkey    | A         |     5958270 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | lineitem   |          1 | dbt3         | i_l_commitdate        |            1 | l_commitDATE  | A         |        4912 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | nation     |          0 | dbt3         | PRIMARY               |            1 | n_nationkey   | A         |          25 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | nation     |          1 | dbt3         | i_n_regionkey         |            1 | n_regionkey   | A         |          12 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | orders     |          0 | dbt3         | PRIMARY               |            1 | o_orderkey    | A         |     1481128 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | orders     |          1 | dbt3         | i_o_orderdate         |            1 | o_orderDATE   | A         |        4824 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | orders     |          1 | dbt3         | i_o_custkey           |            1 | o_custkey     | A         |      211589 |     NULL | NULL   | YES      | BTREE      |         |               |
+| def           | dbt3         | part       |          0 | dbt3         | PRIMARY               |            1 | p_partkey     | A         |      198548 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | partsupp   |          0 | dbt3         | PRIMARY               |            1 | ps_partkey    | A         |      511062 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | partsupp   |          0 | dbt3         | PRIMARY               |            2 | ps_suppkey    | A         |     1022124 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | partsupp   |          1 | dbt3         | i_ps_partkey          |            1 | ps_partkey    | A         |      511062 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | partsupp   |          1 | dbt3         | i_ps_suppkey          |            1 | ps_suppkey    | A         |       20442 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | region     |          0 | dbt3         | PRIMARY               |            1 | r_regionkey   | A         |           5 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | supplier   |          0 | dbt3         | PRIMARY               |            1 | s_suppkey     | A         |        9934 |     NULL | NULL   |          | BTREE      |         |               |
+| def           | dbt3         | supplier   |          1 | dbt3         | i_s_nationkey         |            1 | s_nationkey   | A         |          50 |     NULL | NULL   | YES      | BTREE      |         |               |
++---------------+--------------+------------+------------+--------------+-----------------------+--------------+---------------+-----------+-------------+----------+--------+----------+------------+---------+---------------+

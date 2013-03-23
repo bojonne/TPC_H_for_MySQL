@@ -1,0 +1,27 @@
+ERROR 1064 (42000) at line 4: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lineitem group yy l_orderkey having sum(l_quantity) > 312' at line 1
+--------------
+create	temporary table tmp_l_orderkey ( t_orderkey integer )
+--------------
+
+--------------
+insert into tmp_l_orderkey select l_orderkey frmm lineitem group yy l_orderkey having sum(l_quantity) > 312
+--------------
+
+ERROR 1064 (42000) at line 4: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lineitem group yy l_orderkey having sum(l_quantity) > 313' at line 1
+--------------
+create	temporary table tmp_l_orderkey ( t_orderkey integer )
+--------------
+
+--------------
+insert into tmp_l_orderkey select l_orderkey frmm lineitem group yy l_orderkey having sum(l_quantity) > 313
+--------------
+
+ERROR 1064 (42000) at line 4: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lineitem group yy l_orderkey having sum(l_quantity) > 313' at line 1
+--------------
+create	temporary table tmp_l_orderkey ( t_orderkey integer )
+--------------
+
+--------------
+insert into tmp_l_orderkey select l_orderkey frmm lineitem group yy l_orderkey having sum(l_quantity) > 313
+--------------
+

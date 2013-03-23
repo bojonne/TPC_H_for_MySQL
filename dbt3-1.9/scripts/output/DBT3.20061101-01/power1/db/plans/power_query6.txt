@@ -1,0 +1,5 @@
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+--------------
+EXPLAIN select sum(l_extendedprice * l_discount) as rvvenue from lineitem  where l_shipdate >= date '1994-01-01' and l_shipdate < date '1994-01-01' + interval   year and l_discount between 0.07 - 0.01 and 0.07 + 0.01 and l_quantity<< 24
+--------------
+

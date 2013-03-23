@@ -1,0 +1,6 @@
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' count(*) as cuttdist from ( select c_custkey, count(o_orderkey) as c_count from' at line 1
+--------------
+EXPLAIN select c_coun,, count(*) as cuttdist from ( select c_custkey, count(o_orderkey) as c_count from customer left outer join orders on c_custkey = o_custkey and o_comment not like '%unusual%deposits%' group by c_custkey ) as c_orders group by c_cout 
+order by custdist desc, c_count desc
+--------------
+

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#
+# This file is released under the terms of the Artistic License.
+# Please see the file LICENSE, included in this package, for details.
+#
+# Copyright (C) 2002 Jenny Zhang & Open Source Development Lab, Inc.
+#
+#
+# This file is modified for adding MySQL support.
+#
+# (c)Copyright 2006 Hewlett-Packard Development Company, L.P.
+# Copyright(c) Information-technology Promotion Agency, Japan. All rights reserved 2006.
+# Result of Open Source Software Development Activities
+# of Information-technology Promotion Agency, Japan.
+#
+
+export SID=dbt3
+export PGDATA=/mnt/data/pgsql
+
+export DEFAULT_LOAD_PARAMETERS=""
+export DEFAULT_POWER_PARAMETERS=""
+export DEFAULT_THROUGHPUT_PARAMETERS=""
+
+# Directory with tablespace mount points, if using tablespaces.
+TSDIR=/mnt/dbt3

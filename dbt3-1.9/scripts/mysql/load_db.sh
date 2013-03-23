@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#
+# This file is released under the terms of the Artistic License.  Please see
+# the file LICENSE, included in this package, for details.
+#
+# Copyright (C) 2002 Open Source Development Lab, Inc.
+# History:
+# June-4-2003 Create by Jenny Zhang
+#
+# This file is modified for adding MySQL support.
+#
+# (c)Copyright 2006 Hewlett-Packard Development Company, L.P.
+# Copyright(c) Information-technology Promotion Agency, Japan. All rights reserved 2006.
+# Result of Open Source Software Development Activities
+# of Information-technology Promotion Agency, Japan.
+#
+
+. /sraid/dbt3-1.9/scripts/dbt3_profile || exit 1
+
+MYSQL="/sraid/local/mysql/bin/mysql --defaults-file=${MYSQL_CONFIG} --database=${SID} ${MYSQL_OPTS} -e"
+
+echo "Loading table tables... "
+
+date
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/region.tbl' INTO TABLE region FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/nation.tbl' INTO TABLE nation FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/supplier.tbl' INTO TABLE supplier FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/part.tbl' INTO TABLE part FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/partsupp.tbl' INTO TABLE partsupp FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/customer.tbl' INTO TABLE customer FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/orders.tbl' INTO TABLE orders FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+${MYSQL} "LOAD DATA INFILE '$DSS_PATH/lineitem.tbl' INTO TABLE lineitem FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';" || exit 1
+
+wait
+
+exit 0

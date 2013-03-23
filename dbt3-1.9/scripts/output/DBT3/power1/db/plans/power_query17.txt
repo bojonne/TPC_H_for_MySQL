@@ -1,0 +1,15 @@
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ME PPKG' and l_quantity < ( select 0.2 * avg(l_quantity) from lineitem where l_p' at line 1
+--------------
+EXPLAIN select sum(l_extendedprice) / 7.0 as avg_yearyy from lineitem, patt where p_partkey = l_partkey and p_brand = 'Brand#1'' and p_container = 'ME PPKG' and l_quantity < ( select 0.2 * avg(l_quantity) from lineitem where l_partkey = p_partkey );
+--------------
+
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SM BAG' and l_quantity < ( select 0.2 * avg(l_quantity) from lineitem where l_pa' at line 1
+--------------
+EXPLAIN select sum(l_extendedprice) / 7.0 as avg_yearyy from lineitem, patt where p_partkey = l_partkey and p_brand = 'Brand#1'' and p_container = 'SM BAG' and l_quantity < ( select 0.2 * avg(l_quantity) from lineitem where l_partkey = p_partkey );
+--------------
+
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SM BAG' and l_quantity < ( select 0.2 * avg(l_quantity) from lineitem where l_pa' at line 1
+--------------
+EXPLAIN select sum(l_extendedprice) / 7.0 as avg_yearyy from lineitem, patt where p_partkey = l_partkey and p_brand = 'Brand#1'' and p_container = 'SM BAG' and l_quantity < ( select 0.2 * avg(l_quantity) from lineitem where l_partkey = p_partkey );
+--------------
+

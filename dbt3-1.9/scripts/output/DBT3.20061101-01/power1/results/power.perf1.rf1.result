@@ -1,0 +1,76 @@
+generating update set 1 - 12
+TPC-H Population Generator (Version 1.3.0)
+Copyright Transaction Processing Performance Council 1994 - 2000
+Bang!
+Bang!
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u1
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u1
+creating links in /tmp to file /sraid/mysql/data/delete.1
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u2
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u2
+creating links in /tmp to file /sraid/mysql/data/delete.2
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u3
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u3
+creating links in /tmp to file /sraid/mysql/data/delete.3
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u4
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u4
+creating links in /tmp to file /sraid/mysql/data/delete.4
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u5
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u5
+creating links in /tmp to file /sraid/mysql/data/delete.5
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u6
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u6
+creating links in /tmp to file /sraid/mysql/data/delete.6
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u7
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u7
+creating links in /tmp to file /sraid/mysql/data/delete.7
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u8
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u8
+creating links in /tmp to file /sraid/mysql/data/delete.8
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u9
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u9
+creating links in /tmp to file /sraid/mysql/data/delete.9
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u10
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u10
+creating links in /tmp to file /sraid/mysql/data/delete.10
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u11
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u11
+creating links in /tmp to file /sraid/mysql/data/delete.11
+creating links in /tmp to file /sraid/mysql/data/orders.tbl.u12
+creating links in /tmp to file /sraid/mysql/data/lineitem.tbl.u12
+creating links in /tmp to file /sraid/mysql/data/delete.12
+2013年  2月  5日 火曜日 17:45:41 JST: Stream 1 : Starting Refresh Stream 1...
+--------------
+create table tmp_lineitem1 (l_orderkey numeric(10), l_partkey numeric(10), l_suppkey numeric(10), l_linenumber numeric(10), l_quantity numeric(12,2), l_extendedprice numeric(12,2), l_discount numeric(12,2), l_tax numeric(12,2), l_returnflag char(1), l_linestatus char(1), l_shipdate date, l_commitdate date, l_receiptdate date, l_shipinstruct char(25), l_shipmode char(10), l_comment varchar(44))
+--------------
+
+--------------
+LOAD DATA INFILE '/tmp/lineitem.tbl.u1' INTO TABLE tmp_lineitem1 FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+--------------
+
+--------------
+insert into lineitem (select * from tmp_lineitem1)
+--------------
+
+--------------
+create table tmp_orders1 (o_orderkey numeric(10), o_custkey numeric(10), o_orderstatus char(1), o_totalprice numeric(12,2), o_orderdate date, o_orderpriority char(15), o_clerk char(15), o_shippriority numeric(10), o_comment varchar(79))
+--------------
+
+--------------
+LOAD DATA INFILE '/tmp/orders.tbl.u1' INTO TABLE tmp_orders1 FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n'
+--------------
+
+--------------
+insert into orders (select * from tmp_orders1)
+--------------
+
+--------------
+drop table tmp_lineitem1
+--------------
+
+--------------
+drop table tmp_orders1
+--------------
+
+2013年  2月  5日 火曜日 17:45:45 JST: Stream 1 : Refresh Stream 1 completed.
+Stream 1 : Elapsed time for Refresh Stream 1 : 4 seconds

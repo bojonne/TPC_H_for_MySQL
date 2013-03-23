@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#
+# This file is released under the terms of the Artistic License.
+# Please see the file LICENSE, included in this package, for details.
+#
+# Copyright (C) 2002 Jenny Zhang & Open Source Development Lab, Inc.
+#
+#
+# This file is modified for adding MySQL support.
+#
+# (c)Copyright 2006 Hewlett-Packard Development Company, L.P.
+# Copyright(c) Information-technology Promotion Agency, Japan. All rights reserved 2006.
+# Result of Open Source Software Development Activities
+# of Information-technology Promotion Agency, Japan.
+#
+
+# Database name
+export SID=dbt3
+# MySQL Setting file
+# If you want to use your custome my.cnf, copy it as $MYSQL_CONFIG before begining the test.
+export MYSQL_CONFIG=/mnt/data/mysql/my.cnf
+# "mysql" command's option.
+export MYSQL_OPTS="-u root -v -t"
+# MySQL's Database Directory
+export MYSQL_DATA=/mnt/data/mysql/data
+
+export DEFAULT_LOAD_PARAMETERS=""
+export DEFAULT_POWER_PARAMETERS=""
+export DEFAULT_THROUGHPUT_PARAMETERS=""
+

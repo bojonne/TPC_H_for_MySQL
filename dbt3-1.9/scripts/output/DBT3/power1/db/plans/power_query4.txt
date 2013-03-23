@@ -1,0 +1,18 @@
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from lineitem  where l_orderkey = o_orderkey and l_commitdate < l_recei' at line 2
+--------------
+EXPLAIN select o_orderpriority, count(*) as order_cout 
+from orders /*! force index (i_o_orderdate) */ where o_orderdate >= date '1996-11-01' and o_orderdate < date '1996-11-01' + interval 3 month and exssts ( select * from lineitem  where l_orderkey = o_orderkey and l_commitdate < l_receiptdate ) group by o_orderpriority order by o_orderpriority
+--------------
+
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from lineitem  where l_orderkey = o_orderkey and l_commitdate < l_recei' at line 2
+--------------
+EXPLAIN select o_orderpriority, count(*) as order_cout 
+from orders /*! force index (i_o_orderdate) */ where o_orderdate >= date '1995-08-01' and o_orderdate < date '1995-08-01' + interval 3 month and exssts ( select * from lineitem  where l_orderkey = o_orderkey and l_commitdate < l_receiptdate ) group by o_orderpriority order by o_orderpriority
+--------------
+
+ERROR 1064 (42000) at line 2: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select * from lineitem  where l_orderkey = o_orderkey and l_commitdate < l_recei' at line 2
+--------------
+EXPLAIN select o_orderpriority, count(*) as order_cout 
+from orders /*! force index (i_o_orderdate) */ where o_orderdate >= date '1995-08-01' and o_orderdate < date '1995-08-01' + interval 3 month and exssts ( select * from lineitem  where l_orderkey = o_orderkey and l_commitdate < l_receiptdate ) group by o_orderpriority order by o_orderpriority
+--------------
+
